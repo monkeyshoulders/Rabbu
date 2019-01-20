@@ -1,7 +1,11 @@
-<h1>Your Listings</h1>
 
-<% @listings.each do |listing| %>
-  <h4><%= link_to listing.title, listing %></h4>
+<% if user_signed_in? %>
+  <h1>Your Listings</h1>
+  <p>Add a listing or click to manage a current property</p>
+  <% @listings.each do |listing| %>
+    <h4><%= link_to listing.title, listing %></h4>
+  <% end %>
+  <button type="button" class="btn btn-success" style="margin-top: 2rem"><%= link_to "Add Listing", new_listing_path, style: "color: white" %></button>
+<% else %>
+  <%= render 'layouts/static_landing_page' %>
 <% end %>
-
-<button type="button" class="btn btn-danger" style="margin-top: 2rem"><%= link_to "Add Listing", new_listing_path, style: "color: white" %></button>

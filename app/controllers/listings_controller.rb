@@ -2,7 +2,9 @@ class ListingsController < ApplicationController
   before_action :find_listing, only: [:show, :edit, :update, :destroy]
 
   def index
-    @listings = Listing.all.order("created_at DESC")
+    if user_signed_in?
+      @listings = Listing.where(:user_id => current_user.id).order("created_at DESC")
+    end
   end
 
   def show
