@@ -1,0 +1,7 @@
+<h1>Your Listings</h1>
+
+<% @listings.each do |listing| %>
+  <h4><%= link_to listing.title, listing %></h4>
+<% end %>
+
+<button type="button" class="btn btn-danger" style="margin-top: 2rem"><%= link_to "Add Listing", new_listing_path, style: "color: white" %></button>
