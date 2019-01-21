@@ -1,9 +1,9 @@
 
 <% if user_signed_in? %>
   <h1>Your Listings</h1>
-  <p>Add a listing or click to manage a current property</p>
+  <p>Add a listing or click property to view details</p>
   <% @listings.each do |listing| %>
-    <h4><%= link_to listing.title, listing %></h4>
+    <h4><%= link_to listing.title, listing, style: "color: #212121" %></h4>
   <% end %>
   <button type="button" class="btn btn-success" style="margin-top: 2rem"><%= link_to "Add Listing", new_listing_path, style: "color: white" %></button>
 <% else %>

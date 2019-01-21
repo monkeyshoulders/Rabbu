@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'devices/index'
+  get 'devices/show'
+  get 'devices/edit'
+  get 'devices/create'
+  get 'devices/update'
+  get 'devices/destroy'
   resources :listings
 
   root 'listings#index'

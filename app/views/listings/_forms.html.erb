@@ -1,4 +1,7 @@
 <%= simple_form_for @listing do |f| %>
   <h5><%= f.input :title, label: "Listings:" %></h5>
-  <%= f.button :submit %>
+
+    <%= link_to "Back", root_path, class: "btn btn-sm btn-primary"%>
+    <%= f.button :submit, class: "btn btn-sm btn-secondary" %>
+
 <% end %>
